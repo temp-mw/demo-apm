@@ -31,5 +31,14 @@ All your APIs are auto-instrumented as soon as you complete `Step 2`
 ## Add custom logs
 
 ```
+tracker.info('Info sample');
+tracker.warn('Warning sample');
+tracker.debug('Debugging Sample');
+tracker.error('Error Sample');
+```
 
+If you want to add stack trace along with the error log, you can follow the snippet as given below
+
+```
+tracker.error(new Error('Error sample with stack trace'));
 ```

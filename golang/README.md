@@ -1,24 +1,20 @@
-# golang-apm
+# Golang APM Guide
 
-go get github.com/middleware-labs/golang-apm
+## Prequisites
 
+If you are expecting golang demo data on your dashboard, make sure you have our Host Agent installed.
 
-```golang
+---------------------
 
-import (
-	track "github.com/middleware-labs/golang-apm/tracker"
-	"github.com/middleware-labs/golang-apm/logger"
-)
+## Distributed Tracing
 
-func main() {
-	go track.Track(
-		track.WithConfigTag("service", "Your service Name"),
-		track.WithConfigTag("projectName", "go-demo-app"),
-	)
-	
-	logger.Error("Your Error Message")
-	
-	logger.Info("Your Info Message")
-	
-	logger.Warn("Your Warn Message")
-}
+gin-gonic/gin demo
+```
+go run features/gin/gin.go
+```
+
+gorilla/mux demo
+```
+go run features/mux/mux.go
+```
+
