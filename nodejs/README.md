@@ -2,7 +2,7 @@
 
 ## Prequisites
 
-If you are expecting python demo data on your dashboard, make sure you have our Host Agent installed.
+If you are expecting nodejs demo data on your dashboard, make sure you have our Host Agent installed.
 
 ---------------------
 
@@ -24,6 +24,11 @@ node features/metric.js
 ## Complete Example
 ```
 node app.js
+```
+
+## Complete Example + Database Monitoring (MySQL)
+```
+node dbdemo/app.js
 ```
 
 ---------------------------------
