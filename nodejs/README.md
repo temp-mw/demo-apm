@@ -16,7 +16,7 @@ node features/log.js
 node features/trace.js
 ```
 
-## Python Specific Metrics
+## Node.js Specific Metrics
 ```
 node features/metric.js
 ```
