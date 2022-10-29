@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   creationTimestamp: null
   name: mw-kube-apm
-  namespace: TARGET_NAMESPACE
+  namespace: default
 spec:
   selector:
     matchLabels:
@@ -22,8 +22,6 @@ spec:
           - node 
           - features/log.js
           env:
-            - name: MW_API_KEY
-              value: TARGET_MW_API_KEY
             - name: MW_AGENT_SERVICE
               value: TARGET_MW_AGENT_SERVICE
           image: ghcr.io/middleware-labs/demo-apm-nodejs

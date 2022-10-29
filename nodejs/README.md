@@ -65,12 +65,10 @@ sudo apt-get install make
 
 * Copy the content of `kubedemo/log.yaml` to your local machine
 
-* Replace these placeholders in your local copy
+* Replace this placeholders in your local copy
 
 | Placeholder      | Sample Value | Description     |
 | :---             |    :----:    |          ---: |
-| TARGET_NAMESPACE | default        | Set the namespace where you want to run the demo   |
-| TARGET_MW_API_KEY        | uxerbqzocmlegwsyayrcfuriyixmncobaxir         | Your Middleware API Key      |
 | TARGET_MW_AGENT_SERVICE        | mw-service.mw-agent-ns-uxerb.svc.cluster.local         | Use the sample value replacing  "uxerb" with first 5 letters of your API Key      |
 
 * then run the command given below
