@@ -1,10 +1,11 @@
 # Node.js APM Guide
 
+---------------------
+
+# On a Linux Machine
 ## Prequisites
 
-If you are expecting nodejs demo data on your dashboard, make sure you have our Host Agent installed.
-
----------------------
+* If you are expecting nodejs demo data on your dashboard, make sure you have our Host Agent installed.
 
 ## Log Collection
 ```
@@ -43,3 +44,41 @@ sudo apt-get install gcc
 sudo apt-get install g++
 sudo apt-get install make
 ```
+
+---------------------
+
+# On a Kubernetes Cluster
+
+## Notes
+
+
+* If you do not have a Kubernetes cluster, you can test this by running a minikube cluster in your machine.
+## Prequisites
+
+* If you are expecting nodejs demo data on your dashboard, make sure you have our Kubernetes Agent installed.
+
+* To run Kubernetes APM demo, you may have to keep your Middleware API Key handy.
+
+* You will need bash & curl tools to run the scripts given below.
+
+## Log Collection
+
+* Copy the content of `kubedemo/log.yaml` to your local machine
+
+* Replace these placeholders in your local copy
+
+| Placeholder      | Sample Value | Description     |
+| :---             |    :----:    |          ---: |
+| TARGET_NAMESPACE | default        | Set the namespace where you want to run the demo   |
+| TARGET_MW_API_KEY        | uxerbqzocmlegwsyayrcfuriyixmncobaxir         | Your Middleware API Key      |
+| TARGET_MW_AGENT_SERVICE        | mw-service.mw-agent-ns-uxerb.svc.cluster.local         | Use the sample value replacing  "uxerb" with first 5 letters of your API Key      |
+
+* then run the command given below
+
+```
+kubectl apply -f `PATH TO log.yaml`
+```
+
+If you want to customize the example, you can build a docker image from the Dockerfile provided here. Then replace the image name in your YAML file.
+
+
