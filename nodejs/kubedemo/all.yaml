@@ -20,12 +20,12 @@ spec:
       containers:
         - args: 
           - node 
-          - features/log.js
+          - app.js
           env:
             - name: MW_AGENT_SERVICE
               value: TARGET_MW_AGENT_SERVICE
           image: ghcr.io/middleware-labs/demo-apm-nodejs
           imagePullPolicy: Always
-          name: mw-nodejs-apm-log-demo
+          name: mw-nodejs-apm-demo
           resources: {}
       restartPolicy: Always

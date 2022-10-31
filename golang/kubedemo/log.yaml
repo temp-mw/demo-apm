@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   creationTimestamp: null
-  name: mw-kube-apm
+  name: mw-golang-apm-log-demo
   namespace: default
 spec:
   selector:
@@ -19,13 +19,12 @@ spec:
     spec:
       containers:
         - args: 
-          - node 
-          - features/log.js
+          - go run features/log/log.go
           env:
             - name: MW_AGENT_SERVICE
               value: TARGET_MW_AGENT_SERVICE
-          image: ghcr.io/middleware-labs/demo-apm-nodejs
+          image: ghcr.io/middleware-labs/demo-apm-golang
           imagePullPolicy: Always
-          name: mw-nodejs-apm-log-demo
+          name: mw-golang-apm-log-demo
           resources: {}
       restartPolicy: Always

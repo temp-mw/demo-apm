@@ -1,4 +1,4 @@
-# Golang APM Guide
+# Golang APM Demo
 
 ## Prequisites
 
@@ -6,15 +6,30 @@ If you are expecting golang demo data on your dashboard, make sure you have our 
 
 ---------------------
 
+## Log Collection
+```
+go run features/log/log.go
+```
 ## Distributed Tracing
 
 gin-gonic/gin demo
 ```
-go run features/gin/gin.go
+go run features/trace/gin/gin.go
 ```
 
 gorilla/mux demo
 ```
-go run features/mux/mux.go
+go run features/trace/mux/mux.go
 ```
+
+## Node.js Specific Metrics
+```
+go run features/metric/metric.go
+```
+
+## Complete Example
+```
+go run main.go
+```
+
 
