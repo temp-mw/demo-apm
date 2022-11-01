@@ -18,8 +18,7 @@ spec:
       creationTimestamp: null
     spec:
       containers:
-        - args: 
-          - go run features/metric/metric.go
+        - command: [ "go run /app/features/metric/metric.go" ]
           env:
             - name: MW_AGENT_SERVICE
               value: TARGET_MW_AGENT_SERVICE

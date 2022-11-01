@@ -18,8 +18,7 @@ spec:
       creationTimestamp: null
     spec:
       containers:
-        - args: 
-          - go run main.go
+        - command: [ "go run main.go" ]
           env:
             - name: MW_AGENT_SERVICE
               value: TARGET_MW_AGENT_SERVICE

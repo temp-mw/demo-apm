@@ -8,11 +8,13 @@ If you are expecting python demo data on your dashboard, make sure you have our 
 
 ## Log Collection
 ```
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
 python3 features/log.py
 ```
 
 ## Distributed Tracing
 ```
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
 python3 features/trace.py
 ```
 
@@ -23,6 +25,7 @@ Coming soon ...
 
 ## Complete Example
 ```
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
 python3 app.py
 ```
 
