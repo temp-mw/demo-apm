@@ -37,7 +37,44 @@ event_loop.delay.min | Minimum number of milliseconds spent in a single loop sin
 event_loop.delay.sum | Total number of milliseconds spent in the loop since last loop call. |
 
 ### Traces
-Currently, auto-instrumentation of HTTP APIs are tested and stable.
+Currently, This kind of data is being auto-instrumented
+
+amqplib |
+aws-lambda |
+aws-sdk |
+bunyan |
+cassandra-driver |
+connect |
+dataloader |
+dns |
+http |
+grpc |
+express |
+koa |
+lru-memoizer |
+fastify |
+generic-pool |
+graphql |
+hapi |
+http |
+ioredis |
+redis |
+pg |
+knex |
+koa |
+memcached |
+mongodb |
+mongoose |
+mysql2 |
+mysql |
+nestjs-core |
+net |
+pg |
+pino |
+redis |
+restify |
+winston 
+
 
 ### Logs
 Logs generated via @middleware.io/node-apm will be sent to our Host agent which is a fluent + winston based logging system.
