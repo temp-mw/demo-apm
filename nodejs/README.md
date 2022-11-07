@@ -35,15 +35,21 @@ node dbdemo/app.js
 ---------------------------------
 
 ## Troubleshooting Demo
-If your infrastructure is missing dependencies like g++, make, etc.
+* If your infrastructure is missing dependencies like g++, make, etc.
 
-OR your node-gyp build fails, try ...
-```
-sudo apt-get build-dep build-essential
-sudo apt-get install gcc
-sudo apt-get install g++
-sudo apt-get install make
-```
+    OR your node-gyp build fails, try ...
+    ```
+    sudo apt-get build-dep build-essential
+    sudo apt-get install gcc
+    sudo apt-get install g++
+    sudo apt-get install make
+    ```
+
+* If your application is running inside a container, you may need to pass an ENV variable as follows:
+
+  `MW_AGENT_SERVICE=172.17.0.1`
+  
+  The ENV suggests the address of your local machine where host agent is installed, for some machines this value might be "host.docker.internal"
 
 ---------------------
 
