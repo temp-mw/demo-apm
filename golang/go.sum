@@ -180,10 +180,16 @@ github.com/mattn/go-isatty v0.0.14 h1:yVuAays6BHfxijgZPzw+3Zlu5yQgKGP2/hcQbHb7S9
 github.com/mattn/go-isatty v0.0.14/go.mod h1:7GGIvUiUoEMVVmxf/4nioHXj79iQHKdU27kJ6hsGG94=
 github.com/middleware-labs/golang-apm v1.0.6 h1:XnD6DnYZ31XNV1fD+iV5qeDbLw/4vacdbqeuNl9PXnY=
 github.com/middleware-labs/golang-apm v1.0.6/go.mod h1:6OM8m9zpIuvp7a82rEINBfGkFS3L143YhYs1KN+A0IM=
+github.com/middleware-labs/golang-apm v1.0.7 h1:CTRngDcQV+NNuba8wC7DvufndmSVk23nVCi2hupJnps=
+github.com/middleware-labs/golang-apm v1.0.7/go.mod h1:6OM8m9zpIuvp7a82rEINBfGkFS3L143YhYs1KN+A0IM=
 github.com/middleware-labs/golang-apm-gin v0.4.0 h1:5ybjW8pRAZkVIILPM7EpMcCkNrpSWa2YZbOolmnL+GU=
 github.com/middleware-labs/golang-apm-gin v0.4.0/go.mod h1:MzQzRgAxmxSGte+rGOfaekBtbOrgqfoZ/Z6k6fxZxFE=
+github.com/middleware-labs/golang-apm-gin v0.4.1 h1:VolZMyARgPX8PqEWVbKWmis4PGGwD66HVgG9ewVAyIY=
+github.com/middleware-labs/golang-apm-gin v0.4.1/go.mod h1:PJ5BwtrVP6rSkh1TX3bARqkhxS3kekYUKaOFwJ/FGyw=
 github.com/middleware-labs/golang-apm-mux v0.4.0 h1:T1GqQk59csq/i0GcXt1rQsnq2uXiPWrrj91FNNFVTgI=
 github.com/middleware-labs/golang-apm-mux v0.4.0/go.mod h1:zMWAdGSUZlI0O8oEiBLhBJUTdL11bJDXeQjK/anxkWA=
+github.com/middleware-labs/golang-apm-mux v0.4.1 h1:ZudvGJgtMoC8B7b26Kt4TxFjKaO4MQyGd6PCguMcYHo=
+github.com/middleware-labs/golang-apm-mux v0.4.1/go.mod h1:P+HISXkc4vvBQbXaCEYUh3+6+7K/3riXOijyyc3m/5w=
 github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=
 github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd h1:TRLaZ9cD/w8PVh93nsPXa1VrQ6jlwL5oN8l14QlcNfg=
 github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=

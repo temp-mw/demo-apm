@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"github.com/gorilla/mux"
 	mw_mux "github.com/middleware-labs/golang-apm-mux/mux"
@@ -12,8 +11,6 @@ import (
 	"path/filepath"
 	"time"
 )
-
-var t = mw_mux.CreateTracer("test")
 
 type spaHandler struct {
 	staticPath string
@@ -39,16 +36,16 @@ func (h spaHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	go track.Track(
-		track.WithConfigTag("service", "service1"),
-		track.WithConfigTag("projectName", "mux-app"),
+	config, _ := track.Track(
+		track.WithConfigTag("service", "your service name"),
+		track.WithConfigTag("projectName", "your project name"),
 	)
 	r := mux.NewRouter()
-	r.Use(mw_mux.Middleware("my-server"))
+	r.Use(mw_mux.Middleware(config))
 	r.HandleFunc("/users/{id:[0-9]+}", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		vars := mux.Vars(r)
 		id := vars["id"]
-		name := getUser(r.Context(), id)
+		name := getUser(id)
 		reply := fmt.Sprintf("user %s (id %s)\n", name, id)
 		_, _ = w.Write(([]byte)(reply))
 	}))
@@ -63,10 +60,7 @@ func main() {
 	log.Fatal(srv.ListenAndServe())
 }
 
-func getUser(ctx context.Context, id string) string {
-	_, span := t.Start(ctx, "getUser")
-	span.SetAttributes(track.String("id", id))
-	defer span.End()
+func getUser(id string) string {
 	if id == "123" {
 		return "tester"
 	}
