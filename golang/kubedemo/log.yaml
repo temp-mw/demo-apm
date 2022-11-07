@@ -18,7 +18,7 @@ spec:
       creationTimestamp: null
     spec:
       containers:
-        - command: [ "go run /app/features/log/log.go" ]
+        - command: [ "/app/log" ]
           env:
             - name: MW_AGENT_SERVICE
               value: TARGET_MW_AGENT_SERVICE
