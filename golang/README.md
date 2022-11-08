@@ -22,7 +22,7 @@ gorilla/mux demo
 go run features/trace/mux/mux.go
 ```
 
-## Node.js Specific Metrics
+## Golang Specific Metrics
 ```
 go run features/metric/metric.go
 ```
