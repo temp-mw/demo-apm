@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import io.github.middlewarelabs.agentapmjava.Logger;
+import io.github.middlewarelabs.agentapmjava.Tracer;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +13,7 @@ import java.util.Map;
 public class DemoProjectApplication {
 
 	public static void main(String[] args) {
+		Tracer.track();
 		Map<String, Object> data = new HashMap<String, Object>();
         data.put("key1", "value1");
         data.put("key2", "value2");
