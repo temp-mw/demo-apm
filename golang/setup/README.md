@@ -55,8 +55,8 @@ You may need to add framework specific middleware, to watch traces.
 
 |Framework  |   Reference   |
 |------             |    ---------  |
-|gin/gonic          |    ---------  |
-|gorilla/mux        |    ---------  |
+|gin/gonic          |   [GIN Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/gin)   |
+|gorilla/mux        |   [MUX Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/mux)  |
 
 ---------------
 
