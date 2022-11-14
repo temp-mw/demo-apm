@@ -65,5 +65,5 @@ You may need to add framework specific middleware, to watch traces.
 If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variable:
 
 ```
-MW_AGENT_SERVICE=mw-service.mw-agent-ns-oktba.svc.cluster.local
+MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
 ```
