@@ -2,7 +2,8 @@
 
 ## Prequisites :
 
-To monitor APM data on dashboard, Middleware Host agent needs to be installed.
+* To monitor APM data on dashboard, Middleware Host agent needs to be installed.
+* You can refer [this demo project](https://github.com/middleware-labs/demo-apm/tree/master/nodejs) to refer use cases of APM.
 
 --------------------
 
