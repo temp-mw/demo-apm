@@ -51,8 +51,12 @@ logger.Warn("Warn")
 
 ## Distributed Tracing
 
-Refer [this project](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace)
+You may need to add framework specific middleware, to watch traces.
 
+|Framework  |   Reference   |
+|------             |    ---------  |
+|gin/gonic          |    ---------  |
+|gorilla/mux        |    ---------  |
 
 ---------------
 
