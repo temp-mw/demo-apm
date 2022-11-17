@@ -3,21 +3,25 @@ package io.github.middlewarelabs.demoproject;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import io.github.middlewarelabs.agentapmjava.Logger;
-import io.github.middlewarelabs.agentapmjava.Tracer;
-
-import java.util.HashMap;
-import java.util.Map;
+// import io.github.middlewarelabs.agentapmjava.Logger;
+import io.github.middlewarelabs.agentapmjava.MwTracer;
 
 @SpringBootApplication
 public class DemoProjectApplication {
 
 	public static void main(String[] args) {
-		Tracer.track();
-		Map<String, Object> data = new HashMap<String, Object>();
-        data.put("key1", "value1");
-        data.put("key2", "value2");
-		Logger.log("test", data);
+		// Logger.info("info message");
+		// Logger.debug("debug message");
+		// Logger.warn("warn message");
+		// Logger.error("error message");
+		try {
+			MwTracer.track("myservice");
+		} catch (Throwable throwable) {
+			// parentSpan.setStatus(StatusCode.ERROR, "Something wrong with the parent span");
+		} finally {
+			/*closing the scope does not end the span, this has to be done manually*/
+			// parentSpan.end();
+		}
 		SpringApplication.run(DemoProjectApplication.class, args);
 	}
 
