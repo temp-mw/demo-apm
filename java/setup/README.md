@@ -7,7 +7,28 @@
 
 --------------------
 
-## Step 1 : Add Maven Package
+## Distributed Tracing
+
+For recording the traces you will need to download JAR files given below.
+
+`https://install.middleware.io/blob/master/jars/middleware.jar`
+
+`https://install.middleware.io/blob/master/jars/middleware-extension.jar`
+
+And then run your project with command given below
+
+```
+java -javaagent:middleware.jar \
+    -Dotel.javaagent.extensions=middleware-extension.jar
+    -Dotel.service.name=test-service \
+    -Dotel.traces.exporter=logging,otlp \
+    -Dotel.metrics.exporter=logging,otlp \
+    -Dotel.exporter.otlp.protocol=grpc \
+    -Dotel.exporter.otlp.endpoint="http://0.0.0.0:9319" \
+    -jar <YOUR_APP>.jar
+```
+
+## Add custom logs
 
 Add this dependency in pom.xml
 ```
@@ -21,17 +42,6 @@ Then run ...
 ```
 mvn install
 ```
----------------------
-
-## Distributed Tracing
-
-Add the follwing lines to record traces
-```
-import io.github.middlewarelabs.agentapmjava.MwTracer;
-MwTracer.track();
-```
-
-## Add custom logs
 
 Import logger package
 ```
