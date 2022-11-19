@@ -19,7 +19,7 @@ And then run your project with command given below
 
 ```
 java -javaagent:middleware.jar \
-    -Dotel.javaagent.extensions=middleware-extension.jar
+    -Dotel.javaagent.extensions=middleware-extension.jar \
     -Dotel.service.name=test-service \
     -Dotel.traces.exporter=logging,otlp \
     -Dotel.metrics.exporter=logging,otlp \
