@@ -57,3 +57,9 @@ Logger.warn("warn message");
 Logger.error("error message");
 ```
 
+## Note
+
+If you are using APM in a Kubernetes cluster make sure to pass ENV variable:
+```
+MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
+```
