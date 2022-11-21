@@ -13,7 +13,7 @@ For recording the traces you will need to download JAR files given below.
 
 [middleware.jar](https://install.middleware.io/jars/middleware.jar)
 
-[middleware-extension](https://install.middleware.io/jars/middleware-extension.jar)
+[middleware-extension.jar](https://install.middleware.io/jars/middleware-extension.jar)
 
 And then run your project with command given below
 
