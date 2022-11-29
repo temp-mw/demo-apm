@@ -18,6 +18,7 @@ And then run your project with command given below
 ```
 java -javaagent:/PATH/TO/middleware-javaagent.jar \
     -Dotel.service.name=test-service \
+    -Dotel.resource.attributes=project.name=test-project \
     -jar <YOUR_APP>.jar
 ```
 
