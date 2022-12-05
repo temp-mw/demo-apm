@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/gin-gonic/gin v1.8.1
 	github.com/gorilla/mux v1.8.0
-	github.com/middleware-labs/golang-apm v1.0.7
+	github.com/middleware-labs/golang-apm v1.0.91
 	github.com/middleware-labs/golang-apm-gin v0.4.1
 	github.com/middleware-labs/golang-apm-mux v0.4.1
 )
