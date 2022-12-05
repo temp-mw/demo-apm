@@ -42,3 +42,19 @@ If you want to add stack trace along with the error log, you can follow the snip
 ```
 tracker.error(new Error('Error sample with stack trace'));
 ```
+
+## Error Handling :
+
+If you want to record exception in traces then you can use track.errorRecord(error) method.
+
+```
+ app.get('/error', function (req, res) {
+    try{
+        throw new Error('oh error!');
+    }catch (e) {
+       track.errorRecord(e)
+    }
+    res.status(500).send("wrong");
+});
+ 
+```
