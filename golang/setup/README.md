@@ -58,7 +58,7 @@ You may need to add framework specific middleware, to watch traces.
 |------             |    ---------  |
 |gin/gonic          |   [GIN Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/gin)   |
 |gorilla/mux        |   [MUX Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/mux)  |
-|database/sql        |  [SQL Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/mysql)  |
+|database/sql        |  [SQL Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/sql)  |
 
 ---------------
 

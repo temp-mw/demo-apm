@@ -22,6 +22,11 @@ gorilla/mux demo
 go run features/trace/mux/mux.go
 ```
 
+database/sql demo
+```
+go run features/trace/sql/sql.go
+```
+
 ## Golang Specific Metrics
 ```
 go run features/metric/metric.go
