@@ -11,20 +11,14 @@
 
 For recording the traces you will need to download JAR files given below.
 
-[middleware.jar](https://install.middleware.io/jars/middleware.jar)
-
-[middleware-extension.jar](https://install.middleware.io/jars/middleware-extension.jar)
+[middleware-javaagent.jar](https://install.middleware.io/jars/middleware-javaagent.jar)
 
 And then run your project with command given below
 
 ```
-java -javaagent:/PATH/TO/middleware.jar \
-    -Dotel.javaagent.extensions=/PATH/TO/middleware-extension.jar \
+java -javaagent:/PATH/TO/middleware-javaagent.jar \
     -Dotel.service.name=test-service \
-    -Dotel.traces.exporter=logging,otlp \
-    -Dotel.metrics.exporter=logging,otlp \
-    -Dotel.exporter.otlp.protocol=grpc \
-    -Dotel.exporter.otlp.endpoint="http://0.0.0.0:9319" \
+    -Dotel.resource.attributes=project.name=test-project \
     -jar <YOUR_APP>.jar
 ```
 

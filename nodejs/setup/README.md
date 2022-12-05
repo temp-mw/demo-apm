@@ -48,3 +48,11 @@ If you want to add stack trace along with the error log, you can follow the snip
 ```
 tracker.error(new Error('Error sample with stack trace'));
 ```
+
+## Note :
+
+If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variable:
+
+```
+MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
+```
