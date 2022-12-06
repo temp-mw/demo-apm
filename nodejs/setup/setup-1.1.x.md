@@ -14,7 +14,10 @@ Add these lines given below at the very start of your project.
 
 ```
 const tracker = require('@middleware.io/node-apm');
-tracker.track();
+tracker.track({
+    projectName: "Your project name",
+    serviceName: "Your service name",
+});
 ```
 ---------------------
 

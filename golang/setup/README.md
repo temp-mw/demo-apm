@@ -52,13 +52,14 @@ logger.Warn("Warn")
 
 ## Distributed Tracing
 
-You may need to add framework specific middleware, to watch traces.
+You may need to add a framework specific middleware, to watch traces.
 
 |Framework  |   Reference   |
 |------             |    ---------  |
 |gin/gonic          |   [GIN Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/gin)   |
 |gorilla/mux        |   [MUX Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/mux)  |
-|database/sql        |  [SQL Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/sql)  |
+|database/sql       |   [SQL Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/sql)  |
+|go-pg/pg           |   [PG Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/pg)  |
 
 ---------------
 
