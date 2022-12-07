@@ -1,10 +1,11 @@
 # You will need request from flask to monitor your traces
 from flask import Flask, request
+import sys
 
 # Add these 3 lines as it is
 from apmpythonpackage import apmpythonclass
 tracker=apmpythonclass()
-tracer, trace, extract, collect_request_attributes = tracker.mw_tracer()
+tracer, trace, extract, collect_request_attributes = tracker.mw_tracer("custom-project", "custom-service")
 
 app = Flask(__name__)
 
