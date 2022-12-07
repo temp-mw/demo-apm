@@ -85,4 +85,19 @@ kubectl apply -f `PATH TO log.yaml`
 
 If you want to customize the example, you can build a docker image from the Dockerfile provided here. Then replace the image name in your YAML file.
 
+## Error Handling :
+
+If you want to record exception in traces then you can use track.errorRecord(error) method.
+
+```
+ app.get('/error', function (req, res) {
+    try{
+        throw new Error('oh error!');
+    }catch (e) {
+       track.errorRecord(e)
+    }
+    res.status(500).send("wrong");
+});
+ 
+
 
