@@ -11,7 +11,7 @@
 
 Run this in your terminal
 ```
-npm install @middleware.io/node-apm
+npm install @middleware.io/node-apm --save
 ```
 
 ## Step 2 : Prepend APM script
