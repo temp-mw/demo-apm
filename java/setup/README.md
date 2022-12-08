@@ -3,7 +3,8 @@
 ## Prequisites :
 
 * To monitor APM data on dashboard, Middleware Host agent needs to be installed.
-* You can refer [this demo project](https://github.com/middleware-labs/demo-apm/tree/master/java) to refer use cases of APM.
+* You can refer [this demo project](https://github.com/middleware-labs/demo-apm/tree/master/java) to refer use cases of
+  APM.
 
 --------------------
 
@@ -25,6 +26,7 @@ java -javaagent:/PATH/TO/middleware-javaagent.jar \
 ## Add custom logs
 
 Add this dependency in pom.xml
+
 ```
 <dependency>
   <groupId>io.github.middleware-labs</groupId>
@@ -32,12 +34,15 @@ Add this dependency in pom.xml
   <version>0.0.7</version>
 </dependency>
 ```
+
 Then run ...
+
 ```
 mvn install
 ```
 
 Import logger package
+
 ```
 import io.github.middlewarelabs.agentapmjava.Logger;
 ```
@@ -54,6 +59,23 @@ Logger.error("error message");
 ## Note
 
 If you are using APM in a Kubernetes cluster make sure to pass ENV variable:
+
 ```
 MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
 ```
+
+## Error Handling :
+
+If you want to record exception in traces then you can use Logger.recordError(e) method.
+
+```
+import io.github.middlewarelabs.agentapmjava.Logger;
+        
+try {
+       int[] myNumbers = {1, 2, 3};
+       System.out.println(myNumbers[10]);
+     } catch (Throwable  e) {
+       Logger.recordError(e);
+       System.out.println("Something went wrong.");
+     }
+ 
