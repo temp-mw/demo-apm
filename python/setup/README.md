@@ -3,7 +3,7 @@
 ## Prequisites :
 
 * To monitor APM data on dashboard, Middleware Host agent needs to be installed.
-* You can refer [this demo project](https://github.com/middleware-labs/demo-apm/tree/master/python){:target="_blank"} to refer use cases
+* You can refer [this demo project](https://github.com/middleware-labs/demo-apm/tree/master/python) to refer use cases
   of APM.
 
 --------------------
