@@ -56,3 +56,19 @@ If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variabl
 ```
 MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
 ```
+
+## Error Handling :
+
+If you want to record exception in traces then you can use track.errorRecord(error) method.
+
+```
+ app.get('/error', function (req, res) {
+    try{
+        throw new Error('oh error!');
+    }catch (e) {
+       track.errorRecord(e)
+    }
+    res.status(500).send("wrong");
+});
+ 
+```
