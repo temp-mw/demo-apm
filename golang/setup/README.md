@@ -60,6 +60,7 @@ You may need to add a framework specific middleware, to watch traces.
 |gorilla/mux        |   [MUX Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/mux)  |
 |database/sql       |   [SQL Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/sql)  |
 |go-pg/pg           |   [PG Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/pg)  |
+|go-pg/mongo        |   [Mongo Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/mongo)  |
 
 ---------------
 
