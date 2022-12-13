@@ -34,6 +34,10 @@ Add this dependency in pom.xml
   <version>0.0.7</version>
 </dependency>
 ```
+### Note:
+Refer the latest APM version from the link given below:
+
+https://central.sonatype.dev/artifact/io.github.middleware-labs/agent-apm-java/0.0.7/versions
 
 Then run ...
 
