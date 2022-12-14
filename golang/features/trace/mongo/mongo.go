@@ -5,7 +5,7 @@ import (
 	g "github.com/middleware-labs/golang-apm-gin/gin"
 	track "github.com/middleware-labs/golang-apm/tracker"
 
-    "go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 
@@ -22,8 +22,8 @@ func main() {
 		track.WithConfigTag("projectName", "Your project name"),
 	)
 	r.Use(g.Middleware(config))
-	r.GET("/test12", func(c *gin.Context) {
-     	ctx := c.Request.Context()
+	r.GET("/test", func(c *gin.Context) {
+		ctx := c.Request.Context()
 		client, err := mongo.Connect(ctx, opts)
 		if err != nil {
 			panic(err)
