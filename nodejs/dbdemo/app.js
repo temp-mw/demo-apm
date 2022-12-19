@@ -43,4 +43,8 @@ app.listen(port, () => {
     console.log(`Listening movies at http://localhost:${port}`)
 })
 
+if (process.env.MW_AUTOGENERATE_TRACING_DATA) {
+    require("./tracingloop")
+}
+
 require("./app/routes/tutorial.routes.js")(app);
