@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@middleware.io/node-apm": "^1.1.23",
+    "@middleware.io/node-apm": "^1.1.24",
     "cors": "^2.8.5",
     "mysql": "^2.18.1",
     "express": "^4.18.1"

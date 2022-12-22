@@ -10,6 +10,7 @@ let app = express();
 
 app.get('/', function (req, res) {
     tracker.info('root page api called');
+    tracker.setAttribute("user.id","1")
     res.send('Welcome to root page!');
 });
 
