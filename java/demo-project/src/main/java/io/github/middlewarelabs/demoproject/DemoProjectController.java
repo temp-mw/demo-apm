@@ -10,6 +10,7 @@ public class DemoProjectController {
     @RequestMapping("/hello")
     public String demo() {
         System.out.println("hello GET API called");
+        Logger.setAttribute("user.id", "1");
         try {
             int[] myNumbers = {1, 2, 3};
             System.out.println(myNumbers[10]);

@@ -7,7 +7,7 @@ require (
 	github.com/go-pg/pg/v10 v10.10.7
 	github.com/go-sql-driver/mysql v1.7.0
 	github.com/gorilla/mux v1.8.0
-	github.com/middleware-labs/golang-apm v1.0.95
+	github.com/middleware-labs/golang-apm v1.0.97
 	github.com/middleware-labs/golang-apm-gin v0.4.1
 	github.com/middleware-labs/golang-apm-mongo v0.0.3
 	github.com/middleware-labs/golang-apm-mux v0.4.1
