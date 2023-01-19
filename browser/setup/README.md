@@ -8,6 +8,7 @@ To monitor Browser data on a dashboard, add these lines given below at the head 
    window.Middleware &&
     window.Middleware.track({
          projectName:"Your project name",
+         serviceName:"Your service name",
          accountKey:"{ACCOUNT_KEY}",
          target:"https://{ACCOUNT-UID}.middleware.io"
     });
