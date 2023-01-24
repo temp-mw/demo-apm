@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>io.github.middleware-labs</groupId>
 			<artifactId>agent-apm-java</artifactId>
-			<version>0.0.7</version>
+			<version>0.0.15</version>
 		</dependency>
 	</dependencies>
 
@@ -40,6 +40,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<arguments>
+						<argument>--spring.profiles.active=dev</argument>
+					</arguments>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

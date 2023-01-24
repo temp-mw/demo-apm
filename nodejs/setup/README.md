@@ -11,7 +11,7 @@
 
 Run this in your terminal
 ```
-npm install @middleware.io/node-apm
+npm install @middleware.io/node-apm --save
 ```
 
 ## Step 2 : Prepend APM script
@@ -20,7 +20,10 @@ Add these lines given below at the very start of your project.
 
 ```
 const tracker = require('@middleware.io/node-apm');
-tracker.track();
+tracker.track({
+    projectName: "your-project-name",
+    serviceName: "your-service-name",
+});
 ```
 ---------------------
 
@@ -47,4 +50,28 @@ If you want to add stack trace along with the error log, you can follow the snip
 
 ```
 tracker.error(new Error('Error sample with stack trace'));
+```
+
+## Note :
+
+If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variable:
+
+```
+MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
+```
+
+## Error Handling :
+
+If you want to record exception in traces then you can use track.errorRecord(error) method.
+
+```
+ app.get('/error', function (req, res) {
+    try{
+        throw new Error('oh error!');
+    }catch (e) {
+       track.errorRecord(e)
+    }
+    res.status(500).send("wrong");
+});
+ 
 ```

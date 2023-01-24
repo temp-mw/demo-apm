@@ -19,5 +19,9 @@ func main() {
 }
 
 func FindBooks(c *gin.Context) {
+	ctx := c.Request.Context()
+	track.SetAttribute(ctx, "user.id", "1")
+	track.SetAttribute(ctx, "user.role", "admin")
+	track.SetAttribute(ctx, "user.scope", "read:message,write:files")
 	c.JSON(http.StatusOK, gin.H{"data": "ok"})
 }
