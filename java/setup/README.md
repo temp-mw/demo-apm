@@ -31,7 +31,7 @@ Add this dependency in pom.xml
 <dependency>
   <groupId>io.github.middleware-labs</groupId>
   <artifactId>agent-apm-java</artifactId>
-  <version>0.0.7</version>
+  <version>0.0.16</version>
 </dependency>
 ```
 ### Note:
