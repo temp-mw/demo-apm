@@ -23,42 +23,23 @@ Add these line at the very start of your project
 ```
 from apmpythonpackage import apmpythonclass
 tracker=apmpythonclass()
+tracker.mw_tracer({APM-PROJECT-NAME}, {APM-SERVICE-NAME})
 ```
 
 ---------------------
 
-## Add custom logs
-
-```
-tracker.logemit('custom-tag', {'key1': 'value1', 'key2': 'value2'})
-```
-
 ## Distributed Tracing
 
-Add this line
-
+The middleware-bootstrap -a install command reads through the list of packages installed in your active site-packages folder, and installs the corresponding instrumentation libraries for these packages, if applicable.
 ```
-tracer, trace, extract, collect_request_attributes = tracker.mw_tracer()
-```
-
-You can also pass project name & service name to mw_tracer Ex.
-
-```
-tracer, trace, extract, collect_request_attributes = tracker.mw_tracer({APM-PROJECT-NAME}, {APM-SERVICE-NAME})
+middleware-bootstrap -a install
 ```
 
-Add this span to all the APIs that you want to instrument. (using `with`)
-
+Run the below command for Distributed Tracing:
 ```
-with tracer.start_as_current_span(
-    "your-api-name",
-    context=extract(request.headers),
-    kind=trace.SpanKind.SERVER,
-    attributes=collect_request_attributes(request.environ),
-):
+middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint http://localhost:9319  --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
 ```
 
----------------
 
 ## Note :
 
@@ -66,6 +47,17 @@ If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variabl
 
 ```
 MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
+
+middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local:9319 --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
+```
+
+## Add custom logs
+
+```
+tracker.error('python error log sample')
+tracker.debug('ipython debug log sample')
+tracker.warn('python warning log sample')
+tracker.info('python info log sample')
 ```
 
 ## Error Handling :
