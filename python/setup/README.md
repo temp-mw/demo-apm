@@ -40,15 +40,28 @@ Run the below command for Distributed Tracing:
 middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint http://localhost:9319  --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
 ```
 
-
-## Note :
-
-If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variable:
+Note : If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variable:
 
 ```
 MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
 
 middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local:9319 --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
+```
+
+## Note :
+
+If you get a warning similar to the one given below :
+```
+WARNING: The scripts middleware-bootstrap and middleware-instrument are installed in '/home/.../.local/bin' which is not on PATH.
+
+Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location
+```
+
+You can add the binary to your path 
+
+In linux, you can add this with
+```
+export PATH=$PATH:/home/.../.local/bin
 ```
 
 ## Add custom logs
