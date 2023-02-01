@@ -29,6 +29,12 @@ tracker.mw_tracer({APM-PROJECT-NAME}, {APM-SERVICE-NAME})
 ---------------------
 
 ## Distributed Tracing
+
+The middleware-bootstrap -a install command reads through the list of packages installed in your active site-packages folder, and installs the corresponding instrumentation libraries for these packages, if applicable.
+```
+middleware-bootstrap -a install
+```
+
 Run the below command for Distributed Tracing:
 ```
 middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint http://localhost:9319  --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
