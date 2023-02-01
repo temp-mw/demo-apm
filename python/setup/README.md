@@ -57,9 +57,10 @@ WARNING: The scripts middleware-bootstrap and middleware-instrument are installe
 Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location
 ```
 
-You can add the binary to your path
-```
+You can add the binary to your path 
+
 In linux, you can add this with
+```
 export PATH=$PATH:/home/.../.local/bin
 ```
 
