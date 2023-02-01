@@ -23,6 +23,7 @@ Add these line at the very start of your project
 ```
 from apmpythonpackage import apmpythonclass
 tracker=apmpythonclass()
+tracker.mw_tracer({APM-PROJECT-NAME}, {APM-SERVICE-NAME})
 ```
 
 ---------------------
@@ -30,35 +31,18 @@ tracker=apmpythonclass()
 ## Add custom logs
 
 ```
-tracker.logemit('custom-tag', {'key1': 'value1', 'key2': 'value2'})
+tracker.error('python error log sample')
+tracker.debug('ipython debug log sample')
+tracker.warn('python warning log sample')
+tracker.info('python info log sample')
 ```
 
 ## Distributed Tracing
-
-Add this line
-
+Run the below command for Distributed Tracing:
 ```
-tracer, trace, extract, collect_request_attributes = tracker.mw_tracer()
+middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint http://localhost:9319  --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
 ```
 
-You can also pass project name & service name to mw_tracer Ex.
-
-```
-tracer, trace, extract, collect_request_attributes = tracker.mw_tracer({APM-PROJECT-NAME}, {APM-SERVICE-NAME})
-```
-
-Add this span to all the APIs that you want to instrument. (using `with`)
-
-```
-with tracer.start_as_current_span(
-    "your-api-name",
-    context=extract(request.headers),
-    kind=trace.SpanKind.SERVER,
-    attributes=collect_request_attributes(request.environ),
-):
-```
-
----------------
 
 ## Note :
 
@@ -66,6 +50,8 @@ If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variabl
 
 ```
 MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
+
+middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint MW_AGENT_SERVICE  --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
 ```
 
 ## Error Handling :
