@@ -44,7 +44,7 @@ tracer, trace, extract, collect_request_attributes = tracker.mw_tracer()
 You can also pass project name & service name to mw_tracer Ex.
 
 ```
-tracer, trace, extract, collect_request_attributes = tracker.mw_tracer('demo-project', 'demo-service')
+tracer, trace, extract, collect_request_attributes = tracker.mw_tracer({APM-PROJECT-NAME}, {APM-SERVICE-NAME})
 ```
 
 Add this span to all the APIs that you want to instrument. (using `with`)
