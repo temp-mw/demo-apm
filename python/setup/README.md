@@ -28,15 +28,6 @@ tracker.mw_tracer({APM-PROJECT-NAME}, {APM-SERVICE-NAME})
 
 ---------------------
 
-## Add custom logs
-
-```
-tracker.error('python error log sample')
-tracker.debug('ipython debug log sample')
-tracker.warn('python warning log sample')
-tracker.info('python info log sample')
-```
-
 ## Distributed Tracing
 Run the below command for Distributed Tracing:
 ```
@@ -52,6 +43,15 @@ If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variabl
 MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
 
 middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint MW_AGENT_SERVICE  --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
+```
+
+## Add custom logs
+
+```
+tracker.error('python error log sample')
+tracker.debug('ipython debug log sample')
+tracker.warn('python warning log sample')
+tracker.info('python info log sample')
 ```
 
 ## Error Handling :
