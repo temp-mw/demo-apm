@@ -30,8 +30,8 @@ import (
 Call track method in your main function
 ```
 go track.Track(
-    track.WithConfigTag("service", {APM-PROJECT-NAME}),
-    track.WithConfigTag("projectName", {APM-SERVICE-NAME}),
+    track.WithConfigTag("service", {APM-SERVICE-NAME}),
+    track.WithConfigTag("projectName", {APM-PROJECT-NAME}),
 )
 ```
 Running this method with go routine is important !
