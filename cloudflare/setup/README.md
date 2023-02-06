@@ -29,5 +29,5 @@ tracker.init({
 
 ```typescript		
 const sdk = tracker.track(request, ctx);
-return sdk.sendResponse(response);
+sdk.sendResponse(response);
 ```
