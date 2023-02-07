@@ -31,3 +31,14 @@ tracker.init({
 const sdk = tracker.track(request, ctx);
 return sdk.sendResponse(response);
 ```
+
+### Step 5 : Add Logging
+
+If you want to add logs to your application (which will be accessible from Middleware UI), use these functions ...
+
+```typescript		
+sdk.log.info("info test")
+sdk.log.debug("debug test")
+sdk.log.error("error test")
+sdk.log.warn("warn test")
+```

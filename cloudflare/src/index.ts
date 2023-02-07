@@ -21,7 +21,10 @@ export default {
 		
 		const sdk = tracker.track(request, ctx);
 		
-
+		sdk.log.error("error log test")
+		sdk.log.info("info log test")
+		sdk.log.warn("warn log test")
+		sdk.log.debug("debug log test")
 
 		const url = new URL(request.url);
     	console.log("123----" + `${url.pathname}`);

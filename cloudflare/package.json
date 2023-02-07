@@ -12,7 +12,7 @@
     "deploy": "wrangler publish"
   },
   "dependencies": {
-    "@middleware.io/agent-apm-worker": "^0.0.1",
+    "@middleware.io/agent-apm-worker": "^0.0.6",
     "opentelemetry-sdk-workers": "^0.4.0"
   }
 }
