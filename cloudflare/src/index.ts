@@ -12,8 +12,8 @@ export default {
 	): Promise<Response> {
 
 		tracker.init({
-			projectName:"test-cloudflare-project",
-			serviceName:"test-cloudflare-service",
+			projectName:"demo-cloudflare-project",
+			serviceName:"demo-cloudflare-service",
 			accountKey:"xusuusalpvush63ud7zcg8bi3mauuptds528",
 			target:"https://p2i13hg.middleware.io:443"
 		
@@ -21,10 +21,10 @@ export default {
 		
 		const sdk = tracker.track(request, ctx);
 		
-		sdk.log.error("error log test")
-		sdk.log.info("info log test")
-		sdk.log.warn("warn log test")
-		sdk.log.debug("debug log test")
+		sdk.log.error("demo error log")
+		sdk.log.info("demo info log")
+		sdk.log.warn("demo warn log")
+		sdk.log.debug("demo debug log")
 
 		const url = new URL(request.url);
     	console.log("123----" + `${url.pathname}`);
