@@ -1,6 +1,6 @@
 # You will need request from flask to monitor your traces
 from flask import Flask, request
-
+import logging
 # Add these 3 lines as it is
 from apmpythonpackage import apmpythonclass
 tracker=apmpythonclass()
@@ -17,6 +17,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
+    handler = tracker.mw_handler()
+    logging.getLogger().addHandler(handler)
+    logging.error("error log sample")
+    logging.warning("warning log sample")
+    logging.info("info log sample")
     return 'Hello World!'
 
 @app.route('/exception')
