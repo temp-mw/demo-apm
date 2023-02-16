@@ -45,7 +45,7 @@ Note : If you are using APM in a Kubernetes cluster, Make sure to pass this ENV 
 ```
 MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
 
-middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local:9319 --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
+middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint http://mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local:9319 --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
 ```
 
 ## Note :
@@ -71,6 +71,14 @@ tracker.error('python error log sample')
 tracker.debug('ipython debug log sample')
 tracker.warn('python warning log sample')
 tracker.info('python info log sample')
+```
+
+## Python Logging with Middleware
+
+```
+handler = tracker.mw_handler()
+logging.getLogger().addHandler(handler)
+logging.error("error log sample")
 ```
 
 ## Error Handling :
