@@ -73,6 +73,14 @@ tracker.warn('python warning log sample')
 tracker.info('python info log sample')
 ```
 
+## Python Logging with Middleware
+
+```
+handler = tracker.mw_handler()
+logging.getLogger().addHandler(handler)
+logging.error("error log sample")
+```
+
 ## Error Handling :
 
 If you want to record exception in traces then you can use tracker.record_error(e) method.
