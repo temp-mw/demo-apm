@@ -1,3 +1,7 @@
+# docker build -t ghcr.io/middleware-labs/demo-apm-python .
+# docker push ghcr.io/middleware-labs/demo-apm-python
+# export PATH=$PATH:/home/acq053/.local/bin
+
 # Use an official Python runtime as the base image
 FROM python:3.8-slim-buster
 

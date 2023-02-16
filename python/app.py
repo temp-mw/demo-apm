@@ -4,7 +4,7 @@ from flask import Flask, request
 # Add these 3 lines as it is
 from apmpythonpackage import apmpythonclass
 tracker=apmpythonclass()
-tracker.mw_tracer("custom-project", "custom-service")
+tracker.mw_tracer("new-project", "new-service")
 
 # for logger
 tracker.error('python error log sample')
