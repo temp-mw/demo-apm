@@ -14,6 +14,19 @@ Run this in your terminal
 npm install @middleware.io/node-apm --save
 ```
 
+### Troubleshoot
+
+If your infrastructure is missing dependencies like g++, make, etc.
+OR your node-gyp build fails, try ...
+
+```
+sudo apt-get build-dep build-essential
+sudo apt-get install gcc
+sudo apt-get install g++
+sudo apt-get install make
+```
+
+
 ## Step 2 : Prepend APM script
 
 Add these lines given below at the very start of your project.

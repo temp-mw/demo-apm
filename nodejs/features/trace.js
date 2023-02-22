@@ -2,15 +2,15 @@ const tracker = require('@middleware.io/node-apm');
 let express = require('express');
 
 tracker.track({
-    projectName: "Your project name",
-    serviceName: "Your service name",
+    projectName: "keval-project",
+    serviceName: "keval-service",
 });
 
 let app = express();
 
-app.get('/', function (req, res) {
+app.get('/root', function (req, res) {
     tracker.info('root page api called');
-    tracker.setAttribute("user.id","1")
+    // tracker.setAttribute("user.id","1")
     res.send('Welcome to root page!');
 });
 
