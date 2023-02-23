@@ -37,8 +37,8 @@ sdk.sendResponse(response);
 If you want to add logs to your application (which will be accessible from Middleware UI), use these functions ...
 
 ```typescript		
-sdk.log.info("info test")
-sdk.log.debug("debug test")
-sdk.log.error("error test")
-sdk.log.warn("warn test")
+sdk.logger.info("info test")
+sdk.logger.debug("debug test")
+sdk.logger.error("error test")
+sdk.logger.warn("warn test")
 ```
