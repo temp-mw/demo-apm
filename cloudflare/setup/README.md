@@ -16,6 +16,7 @@ import * as tracker from "@middleware.io/agent-apm-worker";
 ### Step 3 : Initialize Tracker with your Middleare API key  
 
 Add this snippet given below and replace the required details.
+
 ```typescript
 tracker.init({
     projectName:"{APM-PROJECT-NAME}",
@@ -25,6 +26,8 @@ tracker.init({
     consoleLogEnabled:false
 })
 ```
+
+Note: If you want to watch instrumented logs in terminal, set  `consoleLogEnabled:true`
 
 ### Step 4 : Track all the requests with middleware SDK
 
@@ -37,7 +40,10 @@ sdk.sendResponse(response);
 
 If you want to add logs to your application (which will be accessible from Middleware UI), use these functions ...
 
+
 ```typescript		
+// sdk.logger.SEVERITY( MESSAGE, KEY-VALUE PAIRS )
+
 sdk.logger.error("error test")
 sdk.logger.error("error with attributes",{"log.file.name":"error.log"})
 sdk.logger.info("info test")
