@@ -21,7 +21,8 @@ tracker.init({
     projectName:"{APM-PROJECT-NAME}",
     serviceName:"{APM-SERVICE-NAME}",
     accountKey:"{ACCOUNT_KEY}",
-    target:"https://{ACCOUNT-UID}.middleware.io"
+    target:"https://{ACCOUNT-UID}.middleware.io",
+    consoleLogEnabled:false
 })
 ```
 
