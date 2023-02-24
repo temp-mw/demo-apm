@@ -62,6 +62,7 @@ You may need to add a framework specific middleware, to watch traces.
 |go-pg/pg           |   [PG Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/pg)  |
 |go-pg/mongo        |   [Mongo Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/mongo)  |
 |gRPC               |   [gRPC Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/grpc)  |
+|go-chi             |   [go-chi Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/go-chi)  |
 
 ---------------
 
