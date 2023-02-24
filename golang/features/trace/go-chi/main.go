@@ -12,9 +12,9 @@ import (
 
 func main() {
    track.Track(
-		track.WithConfigTag("service", "otelchi-p"),
-		track.WithConfigTag("projectName", "otelchi-p"),
-	)
+   		track.WithConfigTag("service", "your service name"),
+   		track.WithConfigTag("projectName", "your project name"),
+   	)
     // define router
 	r := chi.NewRouter()
 	r.Use(mwchi.Middleware("my-server", mwchi.WithChiRoutes(r)))
