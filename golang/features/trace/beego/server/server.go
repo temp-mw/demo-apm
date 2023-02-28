@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/astaxie/beego"
 	mw_beego "github.com/middleware-labs/golang-apm-beego/beego"
 	track "github.com/middleware-labs/golang-apm/tracker"
@@ -25,7 +24,6 @@ func main() {
 		track.WithConfigTag("service", "your service name"),
 		track.WithConfigTag("projectName", "your project name"),
 	)
-	fmt.Println("config", config)
 	// To enable tracing on template rendering, disable autorender
 	beego.BConfig.WebConfig.AutoRender = false
 	beego.Router("/hello", &exampleController{})
