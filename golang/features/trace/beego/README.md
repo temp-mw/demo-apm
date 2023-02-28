@@ -1,4 +1,4 @@
-## Tracing
+## Distributed Tracing
 
 ```
 import (
@@ -11,11 +11,12 @@ func main(){
 		track.WithConfigTag("service", "your service name"),
 		track.WithConfigTag("projectName", "your project name"),
 	)
-    mware := mw_beego.Middleware(config)
+        mware := mw_beego.Middleware(config)
 	beego.RunWithMiddleWares(":7777", mware)
 }
 ```
 
+## Complete Example
 ```
 go run server/server.go
 
