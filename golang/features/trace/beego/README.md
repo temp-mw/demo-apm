@@ -1,3 +1,5 @@
+## Distributed Tracing
+
 ```
 import (
 	"github.com/astaxie/beego"
@@ -14,6 +16,7 @@ func main(){
 }
 ```
 
+## Complete Example
 ```
 go run server/server.go
 
