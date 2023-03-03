@@ -8,8 +8,8 @@ import (
 )
 func main(){
 	config, _ := track.Track(
-		track.WithConfigTag("service", "beego-beego-pname"),
-		track.WithConfigTag("projectName", "beego-beego-sname"),
+		track.WithConfigTag("service", "your service name"),
+		track.WithConfigTag("projectName", "your project name"),
 	)
 	mware := mwbeego.MiddleWare(config.ServiceName)
 	web.RunWithMiddleWares(":7777", mware)
