@@ -26,8 +26,8 @@ func main() {
 	// POST, GET, PUT, DELETE... http://localhost:8080/update => ctrl.Any()
 	web.Router("/any", ctrl, "*:Any")
 	config, _ := track.Track(
-		track.WithConfigTag("service", "btest123"),
-		track.WithConfigTag("projectName", "btest123"),
+		track.WithConfigTag("service", "your service name"),
+		track.WithConfigTag("projectName", "your project name"),
 	)
 	mware := mwbeego.MiddleWare(config.ServiceName)
 	web.RunWithMiddleWares(":8080", mware)
