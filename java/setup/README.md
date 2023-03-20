@@ -23,6 +23,14 @@ java -javaagent:/PATH/TO/middleware-javaagent.jar \
     -jar <YOUR_APP>.jar
 ```
 
+---------------
+
+### Clojure/Ring Demo
+
+https://github.com/middleware-labs/demo-apm/tree/master/java/ring-demo
+
+----------------
+
 ## Add custom logs
 
 Add this dependency in pom.xml
