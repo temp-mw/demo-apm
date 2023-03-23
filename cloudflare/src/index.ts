@@ -14,20 +14,20 @@ export default {
 		tracker.init({
 			projectName:"demo-cloudflare-project",
 			serviceName:"demo-cloudflare-service",
-			accountKey:"xusuusalpvush63ud7zcg8bi3mauuptds528",
-			target:"https://p2i13hg.middleware.io:443"
+			 accountKey:"{ACCOUNT_KEY}",
+                        target:"https://{ACCOUNT-UID}.middleware.io"
 		
 		})
 		
 		const sdk = tracker.track(request, ctx);
 		
-		sdk.log.error("demo error log")
-		sdk.log.info("demo info log")
-		sdk.log.warn("demo warn log")
-		sdk.log.debug("demo debug log")
+		sdk.logger.error("demo error log")
+		sdk.logger.info("demo info log")
+		sdk.logger.warn("demo warn log")
+		sdk.logger.debug("demo debug log")
 
 		const url = new URL(request.url);
-    	console.log("123----" + `${url.pathname}`);
+    	        console.log("123----" + `${url.pathname}`);
 		const response = await sdk.fetch(`https://httpbin.org${url.pathname}`);
 		return sdk.sendResponse(response);
 	},

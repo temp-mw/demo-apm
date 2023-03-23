@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   creationTimestamp: null
-  name: mw-kube-apm-demo23
+  name: node-trace-demo
   namespace: default
 spec:
   selector:
@@ -18,16 +18,12 @@ spec:
       creationTimestamp: null
     spec:
       containers:
-        - args: 
-          - node 
-          - features/log.js
+        - command: [ "go run /app/features/trace/trace.go" ]
           env:
             - name: MW_AGENT_SERVICE
-              value: mw-service.mw-agent-ns-xusuu.svc.cluster.local
-            - name: MW_AUTOGENERATE_LOGGING_DATA
-              value: "true"
-          image: ghcr.io/middleware-labs/demo-apm-nodejs
+              value: TARGET_MW_AGENT_SERVICE
+          image: ghcr.io/middleware-labs/demo-apm-golang
           imagePullPolicy: Always
-          name: mw-nodejs-apm-log-demo
+          name: mw-golang-apm-trace-demo
           resources: {}
       restartPolicy: Always
