@@ -14,7 +14,7 @@ Run this in your terminal
 composer init
 ```
 
-## Step 2 : Install Middleware APM package
+## Step 2 : Install APM-PHP package
 
 Then after, Run below command in your terminal
 ```
@@ -30,7 +30,7 @@ require 'vendor/autoload.php';
 use Middleware\AgentApmPhp\MwApmCollector;
 ```
 
-## Step 4 : Use APM Collector in your function of any class
+## Step 4 : Use APM Collector
 
 ```
 $mwCollector = new MwApmCollector('DemoProject', 'PrintService');
@@ -41,6 +41,38 @@ $mwCollector->tracingCall(get_called_class(), __FUNCTION__, __FILE__, [
     'db.name' => 'users',
     'custom.attr1' => 'value1',
 ]);
+```
+
+## Sample Code
+```
+<?php
+require 'vendor/autoload.php';
+use Middleware\AgentApmPhp\MwApmCollector;
+
+class DoThings {
+    public static function printString($str): void {
+        echo $str . PHP_EOL;
+    }
+}
+
+class DemoClass {
+    public static function printFunction(): void {
+
+        $mwCollector = new MwApmCollector('DemoProject', 'PrintService');
+        $mwCollector->tracingCall(get_called_class(), __FUNCTION__, __FILE__, [
+            'code.lineno' => '10',
+            'code.column' => '12',
+            'net.host.name' => 'localhost',
+            'db.name' => 'users',
+            'custom.attr1' => 'value1',
+        ]);
+
+        DoThings::printString('Hello World!');
+
+    }
+}
+
+DemoClass::printFunction();
 ```
 
 ---------------------
