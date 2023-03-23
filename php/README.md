@@ -1,6 +1,6 @@
 # PHP APM Setup
 
-## Prequisites :
+## Prerequisites :
 
 * To monitor APM data on dashboard, [Middleware Host-agent](https://docs.middleware.io/docs/getting-started) needs to be installed.
 * You can refer [this demo project](https://github.com/middleware-labs/demo-apm/tree/master/php) to refer use cases of APM.
