@@ -1,2 +1,6 @@
 nodejs/node_modules
 nodejs/dbdemo/node_modules
+php/vendor
+php/composer.lock
+.idea
+.vscode

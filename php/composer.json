@@ -1,0 +1,23 @@
+{
+    "name": "demo-apm/php",
+    "description": "Installation Example for PHP-APM",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Middleware Developers",
+            "email": "dev@middleware.io",
+            "homepage": "https://middleware.io/",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "middleware/agent-apm-php": "dev-master"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
