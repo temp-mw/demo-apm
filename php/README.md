@@ -34,14 +34,13 @@ use Middleware\AgentApmPhp\MwApmCollector;
 
 ```
 $mwCollector = new MwApmCollector('DemoProject', 'PrintService');
-        $mwCollector->tracingCall(get_called_class(), __FUNCTION__, __FILE__, [
-            'code.lineno' => '10',
-            'code.column' => '12',
-            'net.host.name' => 'localhost',
-            'db.name' => 'users',
-            'custom.attr1' => 'value1',
-        ]);
-
+$mwCollector->tracingCall(get_called_class(), __FUNCTION__, __FILE__, [
+    'code.lineno' => '10',
+    'code.column' => '12',
+    'net.host.name' => 'localhost',
+    'db.name' => 'users',
+    'custom.attr1' => 'value1',
+]);
 ```
 
 ---------------------
