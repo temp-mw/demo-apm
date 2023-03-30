@@ -9,21 +9,14 @@
 
 ## Guide
 
-### Step 1 : Install Composer
+### Step 1 : Install APM-PHP package
 
-Run this in your terminal
-```
-composer init
-```
-
-### Step 2 : Install APM-PHP package
-
-Then after, Run below command in your terminal
+Run below command in your terminal to install Middleware's APM-PHP package.
 ```
 composer require middleware/agent-apm-php
 ```
 
-### Step 3 : Prepend APM script
+### Step 2 : Prepend APM script
 
 Add these lines given below at the very start of your project.
 
@@ -32,49 +25,86 @@ require 'vendor/autoload.php';
 use Middleware\AgentApmPhp\MwApmCollector;
 ```
 
-### Step 4 : Use APM Collector
+### Step 3 : Use APM Collector & Start the Tracing-scope
+
+By using the APM Collector, you will start tracing-scope before your code, Also you need to register your hooks along with initial declaration. 
+
+In each hook, you need to define your Classes & Functions name, so whenever they run, agent will track them auto.
 
 ```
-$mwCollector = new MwApmCollector('DemoProject', 'PrintService');
-$mwCollector->tracingCall(get_called_class(), __FUNCTION__, __FILE__, [
-    'code.lineno' => '10',
-    'code.column' => '12',
-    'net.host.name' => 'localhost',
-    'db.name' => 'users',
+$mwCollector = new MwApmCollector('<PROJECT-NAME>', '<SERVICE-NAME>');
+$mwCollector->preTracing();
+
+$mwCollector->registerHook('<CLASS-NAME-1>', '<FUNCTION-NAME-1>', [
     'custom.attr1' => 'value1',
+    'custom.attr2' => 'value2',
 ]);
+$mwCollector->registerHook('<CLASS-NAME-2>', '<FUNCTION-NAME-2>');
+
+```
+
+### Step 4 : End the Tracing-scope
+
+After your code-flow, you need to end the tracing scope, so that agent can send the data to Middleware's APM dashboard.
+
+```
+$mwCollector->postTracing();
+```
+
+### Final Code snippet will be:
+
+```
+<?php
+require 'vendor/autoload.php';
+
+use Middleware\AgentApmPhp\MwApmCollector;
+
+$mwCollector = new MwApmCollector('<PROJECT-NAME>', '<SERVICE-NAME>');
+$mwCollector->preTracing();
+$mwCollector->registerHook('<CLASS-NAME-1>', '<FUNCTION-NAME-1>', [
+    'custom.attr1' => 'value1',
+    'custom.attr2' => 'value2',
+]);
+$mwCollector->registerHook('<CLASS-NAME-2>', '<FUNCTION-NAME-2>');
+
+// Your code goes here
+
+$mwCollector->postTracing();
 ```
 
 ### Sample Code
 ```
 <?php
 require 'vendor/autoload.php';
+
 use Middleware\AgentApmPhp\MwApmCollector;
+
+$mwCollector = new MwApmCollector('DemoProject', 'PrintService');
+$mwCollector->preTracing();
+$mwCollector->registerHook('DemoClass', 'runCode', [
+    'code.column' => '12',
+    'net.host.name' => 'localhost',
+    'db.name' => 'users',
+    'custom.attr1' => 'value1',
+]);
+$mwCollector->registerHook('DoThings', 'printString');
 
 class DoThings {
     public static function printString($str): void {
+        // sleep(1);
         echo $str . PHP_EOL;
     }
 }
 
 class DemoClass {
-    public static function printFunction(): void {
-
-        $mwCollector = new MwApmCollector('DemoProject', 'PrintService');
-        $mwCollector->tracingCall(get_called_class(), __FUNCTION__, __FILE__, [
-            'code.lineno' => '10',
-            'code.column' => '12',
-            'net.host.name' => 'localhost',
-            'db.name' => 'users',
-            'custom.attr1' => 'value1',
-        ]);
-
+    public static function runCode(): void {
         DoThings::printString('Hello World!');
-
     }
 }
 
-DemoClass::printFunction();
+DemoClass::runCode();
+
+$mwCollector->postTracing();
 ```
 
 ---------------------
