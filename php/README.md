@@ -51,7 +51,7 @@ After your code-flow, you need to end the tracing scope, so that agent can send 
 $mwCollector->postTracing();
 ```
 
-### Final Code snippet will be:
+### Final code snippet will be:
 
 ```
 <?php
@@ -72,7 +72,7 @@ $mwCollector->registerHook('<CLASS-NAME-2>', '<FUNCTION-NAME-2>');
 $mwCollector->postTracing();
 ```
 
-### Sample Code
+### Sample Code:
 ```
 <?php
 require 'vendor/autoload.php';
@@ -109,7 +109,7 @@ $mwCollector->postTracing();
 
 ---------------------
 
-## Note :
+## Note:
 
 If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variable:
 
