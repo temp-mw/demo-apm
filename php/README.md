@@ -2,21 +2,37 @@
 
 ## Prerequisites
 
-* To monitor APM data on dashboard, [Middleware Host-agent](https://docs.middleware.io/docs/getting-started) needs to be installed.
-* You can refer [this demo project](https://github.com/middleware-labs/demo-apm/tree/master/php) to refer use cases of APM.
+* To monitor APM data on dashboard, [Middleware Host-agent](https://docs.middleware.io/docs/getting-started) needs to be installed, You can refer [this demo project](https://github.com/middleware-labs/demo-apm/tree/master/php) to refer use cases of APM.
+* PHP requires at least PHP 8+ and a PHP-Extension to run this agent.
 
 --------------------
 
 ## Guide
 
-### Step 1 : Install APM-PHP package
+### Initial Setup:
+
+Before installing this agent, you need to install PHP-Extension(named otel_instrumentation) to run this agent. You can follow below steps to install & enable it:
+* Run `sudo pecl install channel://pecl.php.net/opentelemetry-1.0.0beta2`.
+* Then, Add the extension to your `php.ini` file like: `extension=otel_instrumentation.so`.
+* And verify that the extension is installed and enabled using: `php -m | grep  otel_instrumentation`.
+
+#### Troubleshoot:-
+If you are facing `ERROR: 'phpize' failed` while installing PHP-Extension, then you need to run follow cmd:
+  ```
+  sudo apt-get update
+  sudo apt-get install php8.1-dev
+  sudo apt-get update
+  sudo pecl channel-update pecl.php.net
+  ```
+
+### Step 1: Install APM-PHP package
 
 Run below command in your terminal to install Middleware's APM-PHP package.
 ```
 composer require middleware/agent-apm-php
 ```
 
-### Step 2 : Prepend APM script
+### Step 2: Prepend APM script
 
 Add these lines given below at the very start of your project.
 
@@ -25,7 +41,7 @@ require 'vendor/autoload.php';
 use Middleware\AgentApmPhp\MwApmCollector;
 ```
 
-### Step 3 : Use APM Collector & Start the Tracing-scope
+### Step 3: Use APM Collector & Start the Tracing-scope
 
 By using the APM Collector, you will start tracing-scope before your code, Also you need to register your hooks along with initial declaration. 
 
