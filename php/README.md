@@ -17,10 +17,18 @@ Before installing this agent, you need to install PHP-Extension(named otel_instr
 * And verify that the extension is installed and enabled using: `php -m | grep  otel_instrumentation`.
 
 #### Troubleshoot:-
-If you are facing `ERROR: 'phpize' failed` while installing PHP-Extension, then you need to run follow cmd:
+While installing PHP-Extension:
+* If you are facing `pecl:command not found`, then you need to run follow cmd:
+  ```
+  sudo apt-get update
+  apt-get install php-pear php8.1-dev
+  ```
+* If you are facing `ERROR: 'phpize' failed`, then you need to run follow cmd:
   ```
   sudo apt-get update
   sudo apt-get install php8.1-dev
+  ```
+  ```
   sudo apt-get update
   sudo pecl channel-update pecl.php.net
   ```
