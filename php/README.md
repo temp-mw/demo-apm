@@ -23,6 +23,10 @@ While installing PHP-Extension:
   sudo apt-get update
   apt-get install php-pear php8.1-dev
   ```
+* If you are facing any kind of broken dependencies issues like: `libpcre2-dev : Depends: libpcre2-8-0 / libpcre2-16-0 / libpcre2-32-0`, then you need to run follow cmd:
+  ```
+  sudo apt --fix-broken install
+  ```
 * If you are facing `ERROR: 'phpize' failed`, then you need to run follow cmd:
   ```
   sudo apt-get update
