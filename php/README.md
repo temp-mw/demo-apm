@@ -12,9 +12,9 @@
 ### Initial Setup:
 
 Before installing this agent, you need to install PHP-Extension(named otel_instrumentation) to run this agent. You can follow below steps to install & enable it:
-* Run `sudo pecl install channel://pecl.php.net/opentelemetry-1.0.0beta2`.
-* Then, Add the extension to your `php.ini` file like: `extension=otel_instrumentation.so`.
-* And verify that the extension is installed and enabled using: `php -m | grep  otel_instrumentation`.
+* Run `sudo pecl install channel://pecl.php.net/opentelemetry-1.0.0beta3`.
+* Then, Add the extension to your `php.ini` file like: `extension=opentelemetry.so`.
+* And verify that the extension is installed and enabled using: `php -m | grep  opentelemetry`.
 
 #### Troubleshoot:-
 While installing PHP-Extension:
