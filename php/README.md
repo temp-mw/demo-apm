@@ -50,7 +50,7 @@ Add these lines given below at the very start of your project.
 
 ```
 require 'vendor/autoload.php';
-use Middleware\AgentApmPhp\MwApmCollector;
+use Middleware\AgentApmPhp\MwTracker;
 ```
 
 ### Step 3: Use APM Collector & Start the Tracing-scope
@@ -60,14 +60,14 @@ By using the APM Collector, you will start tracing-scope before your code, Also 
 In each hook, you need to define your Classes & Functions name, so whenever they run, agent will track them auto.
 
 ```
-$mwCollector = new MwApmCollector('<PROJECT-NAME>', '<SERVICE-NAME>');
-$mwCollector->preTracing();
+$tracker = new MwTracker('<PROJECT-NAME>', '<SERVICE-NAME>');
+$tracker->preTrack();
 
-$mwCollector->registerHook('<CLASS-NAME-1>', '<FUNCTION-NAME-1>', [
+$tracker->registerHook('<CLASS-NAME-1>', '<FUNCTION-NAME-1>', [
     'custom.attr1' => 'value1',
     'custom.attr2' => 'value2',
 ]);
-$mwCollector->registerHook('<CLASS-NAME-2>', '<FUNCTION-NAME-2>');
+$tracker->registerHook('<CLASS-NAME-2>', '<FUNCTION-NAME-2>');
 
 ```
 
@@ -76,46 +76,61 @@ $mwCollector->registerHook('<CLASS-NAME-2>', '<FUNCTION-NAME-2>');
 After your code-flow, you need to end the tracing scope, so that agent can send the data to Middleware's APM dashboard.
 
 ```
-$mwCollector->postTracing();
+$tracker->postTrack();
 ```
+
+### Step 5 : To enable Logging feature
+
+If you want to enable Logging feature along with tracing in your project, then you can use below code snippet.
+
+  ```
+   $tracker->warn("this is warning log.");
+   $tracker->error("this is error log.");
+   $tracker->info("this is info log.");
+   $tracker->debug("this is debug log.");
+   ```
 
 ### Final code snippet will be:
 
 ```
 <?php
 require 'vendor/autoload.php';
+use Middleware\AgentApmPhp\MwTracker;
 
-use Middleware\AgentApmPhp\MwApmCollector;
-
-$mwCollector = new MwApmCollector('<PROJECT-NAME>', '<SERVICE-NAME>');
-$mwCollector->preTracing();
-$mwCollector->registerHook('<CLASS-NAME-1>', '<FUNCTION-NAME-1>', [
+$tracker = new MwTracker('<PROJECT-NAME>', '<SERVICE-NAME>');
+$tracker->preTrack();
+$tracker->registerHook('<CLASS-NAME-1>', '<FUNCTION-NAME-1>', [
     'custom.attr1' => 'value1',
     'custom.attr2' => 'value2',
 ]);
-$mwCollector->registerHook('<CLASS-NAME-2>', '<FUNCTION-NAME-2>');
+$tracker->registerHook('<CLASS-NAME-2>', '<FUNCTION-NAME-2>');
 
-// Your code goes here
+$tracker->info("this is info log.");
 
-$mwCollector->postTracing();
+// ----
+// Your code goes here.
+// ----
+
+$tracker->postTrack();
 ```
 
 ### Sample Code:
 ```
 <?php
 require 'vendor/autoload.php';
+use Middleware\AgentApmPhp\MwTracker;
 
-use Middleware\AgentApmPhp\MwApmCollector;
-
-$mwCollector = new MwApmCollector('DemoProject', 'PrintService');
-$mwCollector->preTracing();
-$mwCollector->registerHook('DemoClass', 'runCode', [
+$tracker = new MwTracker('DemoProject', 'PrintService');
+$tracker->preTrack();
+$tracker->registerHook('DemoClass', 'runCode', [
     'code.column' => '12',
     'net.host.name' => 'localhost',
     'db.name' => 'users',
     'custom.attr1' => 'value1',
 ]);
-$mwCollector->registerHook('DoThings', 'printString');
+$tracker->registerHook('DoThings', 'printString');
+
+$tracker->info("this is info log.");
 
 class DoThings {
     public static function printString($str): void {
@@ -132,7 +147,7 @@ class DemoClass {
 
 DemoClass::runCode();
 
-$mwCollector->postTracing();
+$tracker->postTrack();
 ```
 
 ---------------------
