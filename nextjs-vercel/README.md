@@ -28,6 +28,7 @@ const nextConfig = {
      ---
      ---
 }
+module.exports = nextConfig
 ```
 
 ### Step 3: Creation of `Instrumentation` file
