@@ -13,7 +13,7 @@ npm i @middleware.io/agent-apm-worker
 import * as tracker from "@middleware.io/agent-apm-worker";
 ```
 
-### Step 3 : Initialize Tracker with your Middleare API key  
+### Step 3 : Initialize Tracker with your Middleware API key  
 
 Add this snippet given below and replace the required details.
 
@@ -29,7 +29,7 @@ tracker.init({
 
 Note: If you want to watch instrumented logs in terminal, set  `consoleLogEnabled:true`
 
-### Step 4 : Track all the requests with middleware SDK
+### Step 4 : Track all the requests with Middleware SDK
 
 ```typescript		
 const sdk = tracker.track(request, ctx);
