@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* To monitor APM data on dashboard, [Middleware Host-agent](https://docs.middleware.io/docs/getting-started) needs to be installed.
+* To monitor APM data on dashboard, [Middleware Host-agent](https://docs.middleware.io/docs/installation) needs to be installed.
 
 --------------------
 
