@@ -1,5 +1,13 @@
 # Next.js APM Setup
 
+## Important
+
+If you're using [Varcel](https://vercel.com/) platform to deploy your projects, then please wait, we are currently cooperating with Varcel team for its integration. We'll bring it up soon.
+
+*For Self-deployed servers, you can use this APM to track your project.*
+
+--------------------
+
 ## Guide
 
 ### Step 1: Install Next.js APM package
