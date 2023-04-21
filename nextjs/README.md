@@ -2,7 +2,7 @@
 
 ## Important
 
-If you're using [Varcel](https://vercel.com/) platform to deploy your projects, then please wait, we are currently cooperating with Varcel team for its integration. We'll bring it up soon.
+If you're using [Vercel](https://vercel.com/) platform to deploy your projects, then please wait, we are currently cooperating with Vercel team for its integration. We'll bring it up soon.
 
 *For Self-deployed servers, you can use this APM to track your project.*
 
