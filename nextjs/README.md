@@ -29,7 +29,7 @@ module.exports = nextConfig
 
 Create a custom `instrumentation.ts` file in your project root directory, and add the following code as per your choice:
 
-- If you are using [Vercel](https://vercel.com/) platform to deploy your projects, then use the code snippet below for serverless deployment:
+- If you are using [Vercel](https://vercel.com/) platform to deploy your projects, then use the code snippet below for serverless functions:
 ```
 // @ts-ignore
 import { track } from '@middleware.io/agent-apm-nextjs';
