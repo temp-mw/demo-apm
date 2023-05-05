@@ -29,7 +29,7 @@ module.exports = nextConfig
 
 Create a custom `instrumentation.ts` file in your project root directory, and add the following code as per your choice:
 
-- If you are using [Vercel](https://vercel.com/) platform to deploy your projects, then use the code snippet below for serverless deployment:
+- If you are using <a target="_blank" href="https://vercel.com/">Vercel</a> platform to deploy your projects, then use the code snippet below for serverless deployment:
 ```
 // @ts-ignore
 import { track } from '@middleware.io/agent-apm-nextjs';
@@ -42,8 +42,8 @@ export function register() {
     });
 }
 ```
-**Note: After Deploying your project on Vercel, you need to install the [Middleware](https://vercel.com/integrations/middleware) app from the marketplace. You can find more details [here](https://docs.middleware.io/docs/vercel).**
-- If you are using [Middleware's Host-agent](https://docs.middleware.io/docs/installation) on your machine then use code snippet below:
+**Note: After Deploying your project on Vercel, you need to install the <a target="_blank" href="https://vercel.com/integrations/middleware">Middleware</a> app from the marketplace. You can find more details <a target="_blank" href="https://docs.middleware.io/docs/vercel">here</a>.**
+- If you are using <a target="_blank" href="https://docs.middleware.io/docs/installation">Middleware's Host-agent</a> on your machine then use code snippet below:
 ```
 // @ts-ignore
 import { track } from '@middleware.io/agent-apm-nextjs';
