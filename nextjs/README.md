@@ -1,25 +1,17 @@
 # Next.js APM Setup
 
-## Important
-
-If you're using [Vercel](https://vercel.com/) platform to deploy your projects, then please wait, we are currently cooperating with Vercel team for its integration. We'll bring it up soon.
-
-*For Self-deployed servers, you can use this APM to track your project.*
-
---------------------
-
 ## Guide
 
 ### Step 1: Install Next.js APM package
 
-Run below command in your terminal to install Middleware's Next.js APM package.
+Run the command below in your terminal to install Middleware's Next.js APM package:
 ```
 npm install @middleware.io/agent-apm-nextjs
 ```
 
-### Step 2: Changes in `next.config.js` file
+### Step 2: Modify the `next.config.js` file
 
-This feature is experimental, you need to explicitly opt-in by providing below thing into your **next.config.js** file.
+As this feature is experimental, you need to explicitly opt-in by adding the following code to your **next.config.js** file:
 ```
 const nextConfig = {
      ---
@@ -33,11 +25,25 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
-### Step 3: Creation of `Instrumentation` file
+### Step 3: Create an `Instrumentation` file
 
-Now create a custom `instrumentation.ts` file in your project root directory, and add following code as per your choice:
+Create a custom `instrumentation.ts` file in your project root directory, and add the following code as per your choice:
 
-- If you are using [Middleware's Host-agent](https://docs.middleware.io/docs/installation) on your machine then use below code snippet:
+- If you are using [Vercel](https://vercel.com/) platform to deploy your projects, then use the code snippet below for serverless deployment:
+```
+// @ts-ignore
+import { track } from '@middleware.io/agent-apm-nextjs';
+
+export function register() {
+    track({
+        projectName: "<PROJECT-NAME>",
+        serviceName: "<SERVICE-NAME>",
+        target: "vercel",
+    });
+}
+```
+**Note: After Deploying your project on Vercel, you need to install the [Middleware](https://vercel.com/integrations/middleware) app from the marketplace. You can find more details [here](https://docs.middleware.io/docs/vercel).**
+- If you are using [Middleware's Host-agent](https://docs.middleware.io/docs/installation) on your machine then use code snippet below:
 ```
 // @ts-ignore
 import { track } from '@middleware.io/agent-apm-nextjs';
@@ -49,7 +55,7 @@ export function register() {
     });
 }
 ```
-- If you want to instrument your project without installing any host then use the below code snippet:
+- If you want to instrument your project without installing any host, then use the code snippet below:
 ```
 // @ts-ignore
 import { track } from '@middleware.io/agent-apm-nextjs';
@@ -67,7 +73,7 @@ export function register() {
 
 ## Note:
 
-If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variable:
+If you are using APM in a Kubernetes cluster, make sure to pass this ENV variable:
 
 ```
 MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
