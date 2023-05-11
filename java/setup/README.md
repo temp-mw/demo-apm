@@ -79,9 +79,9 @@ For newer setup, we simplified the namespace name to "mw-agent-ns"
 
 ### Step 2 : Set this ENV variable in your application deployment YAML
 ```
-MW_AGENT_SERVICE=mw-service.<NAMESPACE>.svc.cluster.local
+MW_AGENT_SERVICE=mw-service.NAMESPACE.svc.cluster.local
 ```
-Note: Please replace "<NAMESPACE>" with the correct value that you found from Step 1.
+Note: Please replace "NAMESPACE" with the correct value that you found from Step 1.
 
 ## Error Handling :
 
