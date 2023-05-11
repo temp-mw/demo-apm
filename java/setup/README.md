@@ -68,7 +68,7 @@ Logger.warn("warn message");
 Logger.error("error message");
 ```
 
-## Note
+## Note for APM inside Kubernetes
 
 If you are using APM in a Kubernetes cluster make sure to pass ENV variable:
 
