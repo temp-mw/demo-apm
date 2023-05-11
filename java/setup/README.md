@@ -81,7 +81,7 @@ For newer setup, we simplified the namespace name to "mw-agent-ns"
 ```
 MW_AGENT_SERVICE=mw-service.NAMESPACE.svc.cluster.local
 ```
-Note: Please replace "NAMESPACE" with the correct value that you found from Step 1.
+Please replace "NAMESPACE" with the correct value that you found from Step 1.
 
 ## Error Handling :
 
