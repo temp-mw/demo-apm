@@ -72,9 +72,15 @@ Logger.error("error message");
 
 If you are using APM in a Kubernetes cluster make sure to pass ENV variable:
 
+### Step 1 : Find your Middleware Service namespace
+For older setup, your "mw-service" can be inside "mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}"
+For newer setup, we simplified it to "mw-agent-ns"
+
+### Step 2 : Set this ENV variable in your application deployment YAML
 ```
-MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
+MW_AGENT_SERVICE=mw-service.<NAMESPACE>.svc.cluster.local
 ```
+Note: Please replace <NAMESPACE> with the correct value that you found from Step 1.
 
 ## Error Handling :
 
