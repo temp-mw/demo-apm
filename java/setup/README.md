@@ -74,6 +74,7 @@ If you are using APM in a Kubernetes cluster make sure to pass ENV variable:
 
 ### Step 1 : Find your Middleware Service namespace
 For older setup, your "mw-service" can be inside "mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}"
+
 For newer setup, we simplified it to "mw-agent-ns"
 
 ### Step 2 : Set this ENV variable in your application deployment YAML
