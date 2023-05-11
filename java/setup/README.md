@@ -70,7 +70,7 @@ Logger.error("error message");
 
 ## Note for APM inside Kubernetes
 
-If you are using APM in a Kubernetes cluster make sure to pass ENV variable:
+If you are using APM in a Kubernetes cluster make sure to follow these 2 steps:
 
 ### Step 1 : Find your Middleware Service namespace
 For older setup, your "mw-service" can be inside "mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}" namespace
