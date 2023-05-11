@@ -40,13 +40,20 @@ Run the below command for Distributed Tracing:
 middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint http://localhost:9319  --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
 ```
 
-Note : If you are using APM in a Kubernetes cluster, Make sure to pass this ENV variable:
+## Note for APM inside Kubernetes
 
-```
-MW_AGENT_SERVICE=mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local
+If you are using APM in a Kubernetes cluster make sure to follow these 2 steps:
 
-middleware-instrument --resource_attributes=project.name={APM-PROJECT-NAME} --metrics_exporter none --exporter_otlp_endpoint http://mw-service.mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}.svc.cluster.local:9319 --traces_exporter otlp --service_name {APM-SERVICE-NAME} python3 <your-file-name>.py
+### Step 1 : Find your Middleware Service namespace
+For older setup, your "mw-service" can be inside "mw-agent-ns-{FIRST-5-LETTERS-OF-API-KEY}" namespace
+
+For newer setup, we simplified the namespace name to "mw-agent-ns"
+
+### Step 2 : Set this ENV variable in your application deployment YAML
 ```
+MW_AGENT_SERVICE=mw-service.NAMESPACE.svc.cluster.local
+```
+Please replace "NAMESPACE" with the correct value that you found from Step 1.
 
 ## Note :
 
