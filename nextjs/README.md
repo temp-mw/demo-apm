@@ -42,7 +42,7 @@ export function register() {
     });
 }
 ```
-**Note: After Deploying your project on Vercel, you need to integrate the [Middleware](https://vercel.com/integrations/middleware) from the marketplace. You can find more details [here](https://docs.middleware.io/docs/vercel).**
+**Note: After Deploying your project on Vercel, you need to integrate the [Middleware](https://vercel.com/integrations/middleware) from the marketplace. You can find more details [here](https://docs.middleware.io/docs/apm-configuration/next-js/vercel-integration).**
 - If you are using [Middleware's Host-agent](https://docs.middleware.io/docs/installation) on your machine then use code snippet below:
 ```
 // @ts-ignore
