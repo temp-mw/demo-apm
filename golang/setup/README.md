@@ -58,11 +58,13 @@ You may need to add a framework specific middleware, to watch traces.
 |------             |    ---------  |
 |gin/gonic          |   [GIN Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/gin)   |
 |gorilla/mux        |   [MUX Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/mux)  |
-|go-chi             |   [go-chi Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/go-chi)  |
+|go-chi             |   [go-chi Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/go-chi-legacy)  |
+|go-chi/v5          |   [go-chi/v5 Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/go-chi)  |
 |astaxie-beego      |   [astaxie-beego Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/astaxie-beego)  |
 |beego/v2           |   [beego/v2 Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/beego-v2)  |
 |database/sql       |   [SQL Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/sql)  |
 |go-pg/pg           |   [PG Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/pg)  |
+|GORM 1             |   [GORM1 Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/gorm1)  |
 |go-pg/mongo        |   [Mongo Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/mongo)  |
 |gRPC               |   [gRPC Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/grpc)  |
 
