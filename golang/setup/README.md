@@ -64,7 +64,8 @@ You may need to add a framework specific middleware, to watch traces.
 |beego/v2           |   [beego/v2 Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/beego-v2)  |
 |database/sql       |   [SQL Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/sql)  |
 |go-pg/pg           |   [PG Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/pg)  |
-|GORM 1             |   [GORM1 Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/gorm1)  |
+|GORM 1             |   [GORM 1 Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/gorm1)  |
+|GORM 2             |   [GORM 2~~~~ Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/gorm2)  |
 |go-pg/mongo        |   [Mongo Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/mongo)  |
 |gRPC               |   [gRPC Demo](https://github.com/middleware-labs/demo-apm/tree/master/golang/features/trace/grpc)  |
 
