@@ -4,8 +4,9 @@ go 1.20
 
 require (
 	github.com/beego/beego/v2 v2.0.7
-	github.com/middleware-labs/golang-apm v1.0.991
+	github.com/middleware-labs/golang-apm v1.0.993
 	github.com/middleware-labs/golang-apm-beego-beego v0.0.2
+	github.com/pyroscope-io/client v0.7.1
 )
 
 require (
@@ -28,6 +29,7 @@ require (
 	github.com/prometheus/client_model v0.3.0 // indirect
 	github.com/prometheus/common v0.37.0 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
+	github.com/pyroscope-io/godeltaprof v0.1.0 // indirect
 	github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18 // indirect
 	github.com/tinylib/msgp v1.1.8 // indirect
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.40.0 // indirect
