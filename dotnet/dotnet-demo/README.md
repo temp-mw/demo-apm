@@ -1,4 +1,4 @@
-# Sample Dotnet Project
+# Dotnet Demo Project
 
 ## Setup
 
