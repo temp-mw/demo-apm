@@ -4,3 +4,7 @@ php/vendor
 php/composer.lock
 .idea
 .vscode
+
+# dotnet demo
+**/bin
+**/obj
