@@ -8,3 +8,4 @@ php/composer.lock
 # dotnet demo
 **/bin
 **/obj
+**/node_modules
