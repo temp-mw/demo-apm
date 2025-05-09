@@ -18,6 +18,7 @@ Refer https://github.com/middleware-labs/golang-apm-gin/blob/v0.4.2/go.mod
 ## Installation
 
 ```
+cd misc/github-integration/examples/demo-apm/golang/features/trace/gin/
 go get github.com/middleware-labs/golang-apm
 go get github.com/middleware-labs/golang-apm-gin
 ```
