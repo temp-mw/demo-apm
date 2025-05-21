@@ -2,8 +2,10 @@ const tracker = require('@middleware.io/node-apm');
 let express = require('express');
 
 tracker.track({
-    projectName: "keval-project",
-    serviceName: "keval-service",
+    projectName: "pro-node-2.1.2-rc.3",
+    serviceName: "ser-node-2.1.2-rc.3",
+    accessToken: "mgqjtlgshkyhlykoaermkzbjpmgprkrzmbsb",
+    target: "https://sbncr.stage.env.middleware.io",
 });
 
 let app = express();
