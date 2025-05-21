@@ -37,7 +37,7 @@ app.use(bodyParser.json());
 const predefinedItems = [
     { id: "1", name: "Item 1", description: "This is item 1" },
     { id: "2", name: "Item 2", description: "This is item 2" },
-    { id: "3", name: "Item 3", description: "This is item 3" },
+    { id: "3", name: "Item 3", description: "This is item 3" }
 ];
 
 let items = [...predefinedItems];
@@ -104,8 +104,8 @@ app.get("/simulated-crash", (req, res) => {
 app.get("/json-parsing", (req, res, next) => {
     console.log("json-parsing function called");
 
-    const invalidJson = "{ type: 'json' }";
-    const parsedData = JSON.parse(invalidJson);
+    const validJson = '{"type": "json"}';
+    const parsedData = JSON.parse(validJson);
     res.json(parsedData);
 });
 
@@ -147,7 +147,7 @@ app.delete("/items/:id", (req, res) => {
 
 // Error handling middleware
 // app.use((err, req, res, next) => {
-//   console.log("caught error ....")
+//   console.log("caught error ....\")");
 //   res.status(500).json({ message: "Naman APP Internal Server Error" });
 // });
 
