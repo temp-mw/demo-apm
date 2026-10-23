@@ -73,16 +73,16 @@ Tutorial.getAllPublished = result => {
 
 Tutorial.updateById = (id, tutorial, result) => {
   sql.query(
-    "UPDATE tutorials SET title = ?, description = ?, published = ? WHERE id = ?",
+    "UPDATE tutorials SET title = $1, description = $2, published = $3 WHERE id = $4",
     [tutorial.title, tutorial.description, tutorial.published, id],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
-        result(null, err);
+        result(err, null);
         return;
       }
 
-      if (res.affectedRows == 0) {
+      if (res.rowCount === 0) {
         // not found Tutorial with the id
         result({ kind: "not_found" }, null);
         return;
