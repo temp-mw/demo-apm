@@ -8,6 +8,8 @@ const Tutorial = function(tutorial) {
 };
 
 Tutorial.create = (newTutorial, result) => {
+  // PostgreSQL binds $1, $2, ... to values supplied in an array.
+  // RETURNING exposes the generated ID in the query result's rows array.
   sql.query(
     "INSERT INTO tutorials (title, description, published) VALUES ($1, $2, $3) RETURNING id",
     [newTutorial.title, newTutorial.description, newTutorial.published],
@@ -32,6 +34,7 @@ Tutorial.findById = (id, result) => {
       return;
     }
 
+    // pg wraps selected records in rows rather than returning an array directly.
     if (res.rows.length) {
       console.log("found tutorial: ", res.rows[0]);
       result(null, res.rows[0]);
@@ -48,6 +51,7 @@ Tutorial.getAll = (title, result) => {
   const values = [];
 
   if (title) {
+    // Bind the search pattern so quotes in the title remain part of the value.
     query += " WHERE title LIKE $1";
     values.push(`%${title}%`);
   }
@@ -108,6 +112,7 @@ Tutorial.remove = (id, result) => {
       return;
     }
 
+    // DELETE without RETURNING has no result rows; rowCount reports deletions.
     if (res.rowCount === 0) {
       // not found Tutorial with the id
       result({ kind: "not_found" }, null);
